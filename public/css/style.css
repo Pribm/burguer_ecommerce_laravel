@@ -1,0 +1,1109 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    text-decoration: none;
+  }
+
+  html, body {
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .part_two {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    background-color: white;
+    z-index: 30;
+    -webkit-box-shadow: 0px -5px 18px -3px rgba(0, 0, 0, 0.4);
+            box-shadow: 0px -5px 18px -3px rgba(0, 0, 0, 0.4);
+  }
+
+  @font-face {
+    font-family: 'Alfa Slab One';
+    src: url("../fonts/AlfaSlabOne-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: 'Bebas Neue';
+    src: url("../fonts/BebasNeue-Regular.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: 'Monserrat Regular';
+    src: url("../fonts/Montserrat-Regular.ttf");
+  }
+
+  .hero {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 20vh 80vh;
+        grid-template-rows: 20vh 80vh;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "navigation navigation" "mainText mainImage";
+  }
+
+  @media screen and (max-width: 1024px) {
+    .hero {
+      -ms-grid-rows: 20vh 30vh 60vh;
+          grid-template-rows: 20vh 30vh 60vh;
+          grid-template-areas: "navigation navigation" "mainText mainText" "mainImage mainImage";
+    }
+  }
+
+  @media screen and (max-height: 768) {
+    .hero {
+      -ms-grid-rows: 10vh 90vh;
+          grid-template-rows: 10vh 90vh;
+          grid-template-areas: "navigation navigation" "mainText mainImage";
+    }
+  }
+
+  .hero__imageSection {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: mainImage;
+  }
+
+  .hero__title {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: mainText;
+  }
+
+  .navbar {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: navigation;
+  }
+
+  /*----------------------------------------------------------------------*/
+  .gallery {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 60vh;
+        grid-template-rows: 60vh;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "image_left images_right";
+  }
+
+  @media screen and (max-width: 1024px) {
+    .gallery {
+      -ms-grid-rows: 33vh 66vh;
+          grid-template-rows: 33vh 66vh;
+      -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr;
+          grid-template-areas: "image_left image_left"
+   "images_right images_right";
+      row-gap: 4vh;
+    }
+  }
+
+  .gallery__left_side {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: image_left;
+    display: -ms-grid;
+    display: grid;
+  }
+
+  .gallery__right_side {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: images_right;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: "row1" "row2";
+    gap: 20px;
+  }
+
+  .gallery__right_side_container_row_1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: row1;
+  }
+
+  .gallery__right_side_container_row_2 {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: row2;
+  }
+
+  /*---------------------------------------------------------------------------------*/
+  .chooseBurguer_row_1 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 75px;
+  }
+
+  .chooseBurguer_row_2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    text-align: center;
+
+  }
+
+  @media screen and (max-width: 1024px) {
+    .chooseBurguer_row_2 {
+      display: inline;
+    }
+  }
+
+  /*-----------------------------------------------------------------------------------*/
+  .carousel__container_slide_1 {
+    margin: 30px;
+    -webkit-box-shadow: 1px 10px 20px 0px rgba(0, 0, 0, 0.3);
+            box-shadow: 1px 10px 20px 0px rgba(0, 0, 0, 0.3);
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 35vh;
+        grid-template-rows: 35vh;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'text img';
+    padding: 10px;
+    gap: 10px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .carousel__container_slide_1 {
+      -ms-grid-rows: 45vh 35vh;
+          grid-template-rows: 45vh 35vh;
+      -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr;
+          grid-template-areas: 'text text' 'img img';
+    }
+  }
+
+  .carousel__text_side {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: text;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 10px;
+  }
+
+  .carousel__text_side h2 {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    font-weight: 100;
+    color: #3d2514;
+    font-size: 4vh;
+    line-height: 4vh;
+  }
+
+  .carousel__text_side h1 {
+    font-family: "Alfa Slab One";
+    font-weight: 100;
+    color: #3d2514;
+    font-size: 3vh;
+    line-height: 5vh;
+  }
+
+  .carousel__text_side p {
+    margin-top: 20px;
+    font-family: "Monserrat Regular";
+    font-weight: 100;
+    color: #3d2514;
+    font-size: 2vh;
+  }
+
+  .carousel__image_side {
+    background: url("../img/burguerCarousel1.png") no-repeat;
+    background-size: cover;
+    background-position: center;
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: img;
+  }
+
+  /*---------------------------------------------------------------------*/
+  .booking {
+    height: 100vh;
+    background: url("../img/booking_bg.png") no-repeat;
+    background-size: cover;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row: 100;
+    grid-row: 100vh;
+    -ms-grid-column: 1;
+    grid-column: 1fr;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .booking {
+      background-position: -130px;
+    }
+  }
+
+  .booking__container {
+    width: 50vw;
+    padding-top: 20vh;
+    margin-inline: auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 30vh 20vh;
+        grid-template-rows: 30vh 20vh;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 'top' 'body';
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .booking__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    vertical-align: middle;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: top;
+  }
+
+  .booking__data {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: body;
+    display: -ms-grid;
+    display: grid;
+    gap: 1vw;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .booking__data {
+      margin-top: 10px;
+      -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr;
+      gap: 2vh;
+      -ms-grid-rows: 5vh 5vh 5vh 5vh 5vh 5vh;
+          grid-template-rows: 5vh 5vh 5vh 5vh 5vh 5vh;
+    }
+  }
+
+  /*----------------------------------------------------------------------------------*/
+  .footer {
+    color: white;
+    margin: 40px;
+    padding-inline: 30px;
+    background: url("../img/footer_bg.png") no-repeat;
+    background-size: cover;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 15vh 15vh 6vh;
+        grid-template-rows: 15vh 15vh 6vh;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'logo logo'
+   'text contacts'
+   'credits mediaIcons';
+    gap: 2vw;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .footer {
+      -ms-grid-rows: 15vh 15vh 15vh 15vh 6vh;
+          grid-template-rows: 15vh 15vh 15vh 15vh 6vh;
+      -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr;
+          grid-template-areas: 'logo logo'
+   'text text'
+   'contacts contacts'
+   'mediaIcons mediaIcons'
+   'credits credits';
+    }
+  }
+
+  .footer__logo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: logo;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .footer__logo {
+      width: 100%;
+    }
+  }
+
+  .footer__text {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: text;
+    text-align: start;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .footer__text {
+      text-align: center;
+    }
+  }
+
+  .footer__credits {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: credits;
+    text-align: start;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .footer__credits {
+      text-align: center;
+    }
+  }
+
+  .footer__contacts {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: contacts;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .footer__contacts {
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+    }
+  }
+
+  .footer__social_media_icons {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: mediaIcons;
+    -ms-grid-column-align: end;
+        justify-self: end;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .footer__social_media_icons {
+      -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center;
+      -ms-grid-column-align: center;
+          justify-self: center;
+    }
+  }
+
+  .navbar {
+    margin-top: 15px;
+    position: relative;
+    width: 100%;
+    height: 45%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-inline: 4%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .navbar__logo {
+    height: 100%;
+  }
+
+  .navbar__logo img {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 100%;
+  }
+
+  .navbar__navLinks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .navbar__navLinks {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      background-color: honeydew;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      text-align: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin-inline: auto;
+      margin-top: 10%;
+      width: 80vh;
+      height: 70vh;
+      z-index: 40;
+      border-radius: 25px;
+      -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.4);
+              box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .navbar__navLinks li a {
+    color: white;
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    padding: 10px;
+    font-size: 2rem;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar__navLinks li a:hover {
+    color: #3d2514;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .navbar__navLinks li a {
+      color: #3d2514;
+      line-height: 100px;
+    }
+  }
+
+  .navbar__bars {
+    display: none;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .navbar__bars {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border-radius: 10%;
+      color: white;
+      text-align: center;
+      line-height: 50px;
+      font-size: 1.5rem;
+      background-color: rgba(210, 105, 30, 0.452);
+      display: inline-block;
+    }
+  }
+
+  .hero {
+    overflow: hidden;
+    background-color: #f7b614;
+    background: url("../img/hero_background.png");
+    background-size: cover;
+    width: 100vw;
+    /*-------------------------------------------------------------------*/
+  }
+
+  #hero_section {
+    overflow: hidden;
+    background-color: #f7b614;
+    background: url("../img/hero_background.png");
+    background-size: cover;
+    width: 100vw;
+  }
+
+  .hero__imageSection {
+    position: relative;
+  }
+
+  .hero__imageSection img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: absolute;
+  }
+
+  .hero__image_and_price {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .hero__circle {
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    position: absolute;
+    -webkit-transform: scale(0.3) translate(-50%);
+            transform: scale(0.3) translate(-50%);
+    fill: red;
+  }
+
+  .hero__circle__font {
+    fill: white;
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-transform: scale(2.5) translate(3%);
+            transform: scale(2.5) translate(3%);
+  }
+
+  .hero__circle__font__cents {
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+
+  .hero__circle__font__only {
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
+    letter-spacing: 3px;
+  }
+
+  .hero__title {
+    z-index: 10;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .hero__title__text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .hero__title__text p {
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    font-size: 2vw;
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .hero__title__text p {
+      -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center;
+      font-size: 4vw;
+    }
+  }
+
+  .hero__title__text h1 {
+    font-family: "Alfa Slab One";
+    font-size: 8vw;
+    color: #3d2514;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .hero__title__text h1 {
+      -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center;
+      font-size: 15vw;
+    }
+  }
+
+  .hero__title__text h2 {
+    font-family: "Alfa Slab One";
+    font-size: 8vw;
+    color: #3d2514;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .hero__title__text h2 {
+      -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center;
+      font-size: 12vw;
+    }
+  }
+
+  .gallery__left_side {
+    padding: 30px;
+  }
+
+  .gallery__left_side_container {
+    background: url("../img/BurgerImage.png") no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    border-radius: 15px;
+    padding: 30px;
+    -webkit-transition: background-size 0.3s ease-in-out;
+    transition: background-size 0.3s ease-in-out;
+  }
+
+  .gallery__left_side_container h2 {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    color: white;
+    font-weight: 100;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .gallery__left_side_container h1 {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    color: white;
+    font-weight: 100;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .gallery__left_side_container:hover {
+    background-size: 115%;
+  }
+
+  .gallery__right_side {
+    padding: 30px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .gallery__right_side {
+      padding: 0px 30px 0px 30px;
+    }
+  }
+
+  .gallery__right_side_container_row_1 {
+    background: url("../img/BurgerImage2.png") no-repeat;
+    background-size: 100%;
+    background-position: center;
+    padding: 30px;
+    border-radius: 15px;
+    -webkit-transition: background-size 0.3s ease-in-out;
+    transition: background-size 0.3s ease-in-out;
+  }
+
+  .gallery__right_side_container_row_1 h2 {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    color: white;
+    font-weight: 100;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .navbar__link a{
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    color: white;
+    font-weight: 100;
+    font-size: 2rem;
+    line-height: 2rem;
+    text-decoration: 0;
+    transition: .5s all ease-in;
+  }
+
+  .navbar__link a::after {
+    content: '';
+    width: 0px;
+    height: 3px;
+    display: block;
+    background: rgb(255, 255, 255);
+    transition: 300ms;
+  }
+
+  .navbar__link a:hover::after {
+    width: 100%;
+  }
+
+  #main_section_title h1{
+    font-family: "Alfa Slab One";
+    font-size: 8vh;
+    color: #3d2514;
+  }
+
+  #main_section_title h6{
+    -ms-flex-item-align: start;
+    -ms-grid-row-align: start;
+    align-self: start;
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    font-size: 4vh;
+    display: inline-block;
+  }
+
+  #price_tag {
+      min-width: 180px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      bottom: -5%;
+      right: -5%;
+      color: white;
+      font-family: "Bebas Neue", Helvetica, sans-serif;
+      border: dashed white 2px;
+      box-shadow: 0 0 0 10px #dc3545;
+  }
+
+  .gallery__right_side_container_row_1 h1 {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    color: white;
+    font-weight: 100;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .gallery__right_side_container_row_1:hover {
+    background-size: 115%;
+  }
+
+  .gallery__right_side_container_row_2:hover {
+    background-size: 115%;
+  }
+
+  .gallery__right_side_container_row_2 {
+    background: url("../img/BurgerImage3.png") no-repeat;
+    background-size: 100%;
+    background-position: 0px -110px;
+    padding: 30px;
+    border-radius: 15px;
+    -webkit-transition: background-size 0.3s ease-in-out;
+    transition: background-size 0.3s ease-in-out;
+  }
+
+  .gallery__right_side_container_row_2 h2 {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    color: white;
+    font-weight: 100;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  .gallery__right_side_container_row_2 h1 {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    color: white;
+    font-weight: 100;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .gallery__right_side_container_row_2 {
+      background-position: bottom;
+    }
+  }
+
+  .chooseBurguer_card {
+    width: 450px;
+    height: 600px;
+    margin-bottom: 60px;
+  }
+
+  .chooseBurguer_card h1 {
+    font-family: "Alfa Slab One";
+    font-weight: 100;
+    color: #3d2514;
+    font-size: 3rem;
+  }
+
+  .chooseBurguer_card p {
+    font-family: "Monserrat Regular";
+  }
+
+  .chooseBurguer_card a {
+    font-family: "Alfa Slab One";
+    font-size: 1.2rem;
+    background-color: #bf2222;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    margin-inline: auto;
+    text-decoration: none;
+  }
+
+  .chooseBurguer_card a:hover {
+    background-color: #771717;
+    border-radius: 65px;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .chooseBurguer_row_1 h4 {
+    background-color: #ffc045;
+    display: inline-block;
+    padding: 10px;
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    color: #3d2514;
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
+
+  .chooseBurguer_row_1 p {
+    font-family: "Monserrat Regular";
+  }
+
+  .chooseBurguer_row_2_burguer_1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 80px;
+  }
+
+  .chooseBurguer_row_2_burguer_1 h1 {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    font-size: 2rem;
+    color: #3d2514;
+  }
+
+  .chooseBurguer_row_2_burguer_1 p {
+
+  }
+
+  .chooseBurguer_row_2_burguer_1 a {
+    font-family: "Alfa Slab One";
+    font-size: 1.2rem;
+    background-color: #bf2222;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    width: 40%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-inline: auto;
+  }
+
+  .chooseBurguer_row_2_burguer_1 a:hover {
+
+  }
+
+  .chooseBurguer_row_2_burguer_2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-around;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 80px;
+    height: 600px;
+    background-color: #9b1616;
+  }
+
+  .chooseBurguer_row_2_burguer_2 h1 {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    font-size: 2rem;
+    color: #3d2514;
+  }
+
+  .chooseBurguer_row_2_burguer_2 p {
+    font-family: "Monserrat Regular";
+    width: 60%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .chooseBurguer_row_2_burguer_2 a {
+    font-family: "Alfa Slab One";
+    font-size: 1.2rem;
+    background-color: #bf2222;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    width: 40%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-inline: auto;
+  }
+
+  .chooseBurguer_row_2_burguer_2 a:hover {
+    background-color: #771717;
+    border-radius: 65px;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .chooseBurguer_row_2_burguer_3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 80px;
+  }
+
+  .chooseBurguer_row_2_burguer_3 h1 {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    font-size: 2rem;
+    color: #3d2514;
+  }
+
+  .chooseBurguer_row_2_burguer_3 p {
+    font-family: "Monserrat Regular";
+    width: 60%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .chooseBurguer_row_2_burguer_3 a {
+    font-family: "Alfa Slab One";
+    font-size: 1.2rem;
+    background-color: #bf2222;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    width: 40%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-inline: auto;
+  }
+
+  .chooseBurguer_row_2_burguer_3 a:hover {
+    background-color: #771717;
+    border-radius: 65px;
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .booking input {
+    border-radius: 8px;
+    border: solid lightgray 2px;
+    padding-left: 20px;
+  }
+
+  .booking input::-webkit-input-placeholder {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+  }
+
+  .booking input:-ms-input-placeholder {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+  }
+
+  .booking input::-ms-input-placeholder {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+  }
+
+  .booking input::placeholder {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+  }
+
+  .booking input:focus {
+    border: solid #a8a8a8 2px;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .booking button {
+    background-color: #bf2222;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    font-family: "Alfa Slab One";
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    line-height: 1rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .booking button:hover {
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background-color: #9b1616;
+    cursor: pointer;
+  }
+
+  .booking__title {
+    text-align: center;
+  }
+
+  .booking__title h1 {
+    font-family: "Alfa Slab One";
+    font-size: 3rem;
+    color: #3d2514;
+  }
+
+  .booking__title h2 {
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    color: #3d2514;
+  }
+
+  .footer p {
+    font-family: "Monserrat Regular";
+    line-height: 1.5rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .footer p {
+      font-size: 0.8rem;
+    }
+  }
+
+  .footer h3 {
+    padding-left: 10px;
+    font-family: "Bebas Neue", Helvetica, sans-serif;
+    font-weight: 100;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .footer h3 {
+      font-size: 1rem;
+    }
+  }
+  /*# sourceMappingURL=style.css.map */

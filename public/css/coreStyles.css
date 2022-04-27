@@ -1,0 +1,12 @@
+.navbar {
+  display: flex;
+}
+.navbar__navLinks li {
+  list-style: none;
+}
+.navbar__navLinks li a {
+  text-decoration: none;
+}
+.navbar__navLinks li a:hover {
+  color: rgb(48, 31, 10);
+}

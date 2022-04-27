@@ -1,0 +1,14 @@
+.navbar {
+    display: flex;
+    &__navLinks {
+        & li {
+            list-style: none;
+            & a {
+                text-decoration: none;
+                &:hover {
+                    color: rgb(48, 31, 10);
+                }
+            }
+        }
+    }
+}
