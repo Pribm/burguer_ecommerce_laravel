@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('user_avatar')->nullable();
+        Schema::create('phones', function (Blueprint $table) {
+            $table->id();
+            $table->string('phone_number');
+            $table->foreignId('user_id');
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('users')->on('id');
         });
     }
 
@@ -25,8 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('phones');
     }
 };
