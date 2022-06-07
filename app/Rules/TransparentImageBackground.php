@@ -6,14 +6,15 @@ use Illuminate\Contracts\Validation\Rule;
 
 class TransparentImageBackground implements Rule
 {
+    protected $attribute;
     /**
      * Create a new rule instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($attribute)
     {
-        //
+        $this->attribute = $attribute;
     }
 
     /**
@@ -36,7 +37,7 @@ class TransparentImageBackground implements Rule
      */
     public function message()
     {
-        return 'Your image background must be transparent';
+        return 'Your '.$this->attribute.' must be transparent';
     }
 
     function check_transparent($im) {

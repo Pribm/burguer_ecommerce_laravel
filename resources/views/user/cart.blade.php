@@ -1,14 +1,14 @@
-@extends('layouts.user')
+@extends('layouts.navigation.user')
     @section('content')
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
                 Cart
             </div>
-            <div class="card-body justify-content-center">
-
+            <form class="card-body justify-content-center" method="GET" action="{{ route('user.checkout') }}">
+                @csrf
                 <div class="row justify-content-center">
-                    <div class="col-md-6 bg-white shadow">
+                    <div class="col-md-6 bg-white shadow order-2 order-md-1">
                         <h6 class="text-secondary mt-2 fw-bold">Order</h6>
 
                         @php
@@ -30,21 +30,22 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="flex-grow-0">
                                             <a
-                                            href={{route('insert.cart',['product_id' => $cart_item['product_id'], 'page' => 'checkout'])}}
+                                            href={{route('remove.cart',['product_id' => $cart_item['product_id']])}}
                                             class="btn btn-sm btn-primary d-flex align-items-center"
                                             style="width:25px; height: 25px;">
-                                                +
+                                                -
                                             </a>
+
                                         </div>
                                         <div class="flex-grow-1 mx-2">
                                             <input disabled readonly type="text" class="form-control disabled text-center" style="width: 100%; height: 25px;" value="{{$cart_item['count']}}">
                                         </div>
                                         <div class="flex-grow-0">
                                             <a
-                                            href={{route('remove.cart',['product_id' => $cart_item['product_id']])}}
+                                            href={{route('insert.cart',['product_id' => $cart_item['product_id'], 'page' => 'checkout'])}}
                                             class="btn btn-sm btn-primary d-flex align-items-center"
                                             style="width:25px; height: 25px;">
-                                                -
+                                                +
                                             </a>
                                         </div>
                                     </div>
@@ -72,25 +73,40 @@
                                     $subtotal = $subtotal + $subtotal_items[$i]
                                 @endphp
                             @endfor
-                            <h6>$ {{$subtotal}}</h6>
+                            <h6 id='subtotal'>$ {{$subtotal}}</h6>
                         </div>
 
                         <div class="d-flex mt-2">
                             <strong class="me-auto">Delivery</strong>
-                            <h6>$ 10</h6>
+                            <h6 id='delivery_value'>$ {{$delivery_value}}</h6>
                         </div>
 
                         <div class="d-flex mt-2">
                             <strong class="me-auto">Total</strong>
-                            <h6>321321</h6>
+                            <h6 id='delivery_total'>$ {{$subtotal + $delivery_value}}</h6>
                         </div>
-
                         <div class="d-flex my-4">
-                            <button class="btn btn-primary flex-grow-1">Proceed to checkout</button>
+                            <button class="btn btn-primary flex-grow-1" type="submit">Proceed to checkout</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 order-1 order-md-2">
+                        <h5>Select your address</h5>
+                        <div id="select_address">
+                            @foreach ($address as $key => $addr)
+                                <div class="form-check card d-flex flex-row align-items-center py-2 mb-2">
+                                    <input class="form-check-input p-0 m-0" type="radio" name="address_id" value="{{encrypt($addr->id)}}" {{$key === 0 ? 'checked' : ''}}/>
+                                    <label class="form-check-label p-0 ms-2" for="exampleRadios{{$key}}">
+                                    {{$addr->sublocality}}, {{$addr->house_number}} - {{$addr->zipcode}} , {{$addr->city}} - {{$addr->state}}
+                                    </label>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="{{asset('js/cart.js')}}"></script>
     @endsection

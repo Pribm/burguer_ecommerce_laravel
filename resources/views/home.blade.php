@@ -1,4 +1,4 @@
-@extends('layouts.user')
+@extends('layouts.navigation.user')
 
 @section('content')
 <div class="container">

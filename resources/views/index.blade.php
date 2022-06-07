@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{$site_info->site_name}}</title>
+    <link rel="icon" href={{route('get.image', ['path' => 'website', 'subpath' => 'images', 'image' => $site_info->favicon])}}>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
     <link rel="stylesheet" href={{asset('css/style.css')}}>
@@ -14,7 +15,7 @@
     <div class="all">
         <section class="vh-100 d-flex flex-column" id='hero_section'>
             <div class="d-flex justify-content-around align-items-center p-2">
-                <a href="#" class="navbar__logo"><img src="../img/Logo.png" alt="burguerhouse"></a>
+                <a href="#" class="navbar__logo"><img src={{$site_info ? route('get.image', ['path' => 'website', 'subpath' => 'images', 'image' => $site_info->horizontal_logo]) : "../img/Logo.png"}} alt="burguerhouse" height='80'></a>
                 <nav class="m-0 p-0 mt-auto mb-auto d-none d-md-inline-block">
                     <ul class="mt-auto m-0 p-0 ">
                         <li class="d-md-inline-block navbar__link mx-2"><a href="#hero_section">Home</a></li>
@@ -166,16 +167,17 @@
         </section>
 
         <section class="footer">
-            <img src="../img/Logo_white.png" alt="" class="footer__logo">
-            <p class="footer__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, vero ipsum excepturi ipsa consequuntur
-                veniam voluptatibus reiciendis facere culpa doloremque, corporis magni accusamus, sed enim rerum vel nobis
-                natus nam!
-            </p>
-            <p class="footer__credits">&copy;Paulo Monteiro 2021. All Rights Reserved</p>
+            <img src={{$site_info ? route('get.image', ['path' => 'website', 'subpath' => 'images', 'image' => $site_info->horizontal_logo]) : "../img/Logo.png"}} alt="footer_logo" height='100' class="footer__logo" style="filter: brightness(0) invert(1);">
+            <div>
+                <p class="footer__text m-0">
+                    {{$address->sublocality}} - {{$address->house_number}}, {{$address->zipcode}}
+                </p>
+                <h6>{{$address->city}} {{$address->state}}, {{$address->country}}</h6>
+            </div>
+            <p class="footer__credits">{{$site_info ? $site_info->footer_message : null}}</p>
             <div class="footer__contacts">
-                <h3>mainroad.buildingname.country</h3>
-                <h3>info@companyname.com</h3>
+                <h3>Contact:</h3>
+                <h3>{{$site_info->email_address  ? $site_info->email_address  : 'info@companyname.com'}}</h3>
             </div>
             <div class="footer__social_media_icons">
                 <a href="#"><img src="../img/Instagram.png" alt=""></a>

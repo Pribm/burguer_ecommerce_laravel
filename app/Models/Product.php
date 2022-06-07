@@ -20,6 +20,11 @@ class Product extends Model
 
     public function users()
     {
-        $this->belongsToMany(User::class, 'cart', 'product_id', 'user_id');
+       return $this->belongsToMany(User::class, 'cart', 'product_id', 'user_id');
+    }
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class, 'product_order', 'product_id', 'order_id');
     }
 }

@@ -11286,6 +11286,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+@media (min-width: 768px) {
+  .w-md-auto {
+    width: auto !important;
+  }
+}
 .admin__navbar i {
   transition: all 0.3s ease-in-out;
 }
@@ -11294,7 +11299,7 @@ textarea.form-control-lg {
   background-color: white;
   max-height: 100vh;
   height: 100vh;
-  min-width: 195px;
+  min-width: 200px;
   position: absolute;
   top: -10000px;
   padding: 0;

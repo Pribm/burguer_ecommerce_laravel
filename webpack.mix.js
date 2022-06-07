@@ -13,6 +13,8 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/profile.js', 'public/js')
+    .js('resources/js/product/main.js', 'public/js')
+    .js('resources/js/user/cart.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/coreStyles.scss', 'public/css')
     .sourceMaps();
