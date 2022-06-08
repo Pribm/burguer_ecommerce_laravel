@@ -38,7 +38,7 @@
         <section id='order-products'>
             @foreach ($order->products as $key => $product)
                 <article id="order-product-{{$key}}"  class="d-flex align-items-center" style="height: 80px;">
-                    <img class="me-2" style="height: 100%; width: 80px; object-fit:contain;" src="{{ env('APP_URL') . '/product/getThumbnail/' . $product->id . '/' . $product->image }}" alt={{ $product->main_text }}>
+                    <img class="me-2" style="height: 100%; width: 80px; object-fit:contain;" src="{{ env('APP_URL') . 'product/getThumbnail/' . $product->id . '/' . $product->image }}" alt={{ $product->main_text }}>
                     <div>
                         <h6 class="fw-bold">
                             {{ $product->main_text }}

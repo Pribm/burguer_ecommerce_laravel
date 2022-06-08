@@ -119,7 +119,7 @@
                             style="bottom: 0px; right: 80px; width: 60px; height: 60px; border-radius: 50%; border: dashed white .5px; box-shadow: 0 0 0 2px #dc3545">
                                 <h6>{{$product->price}}</h6>
                             </div>
-                            <img style="height: 100%; object-fit:contain;" src="{{env('APP_URL').'/product/getThumbnail/'. $product->id .'/'. $product->image}}" alt="{{$product->secondary_text}}">
+                            <img style="height: 100%; object-fit:contain;" src="{{env('APP_URL').'product/getThumbnail/'. $product->id .'/'. $product->image}}" alt="{{$product->secondary_text}}">
                         </div>
                         <h1>{{$product->main_text}}</h1>
                         <p>{{$product->secondary_text}}</p>

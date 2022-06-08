@@ -19,7 +19,7 @@
                         @foreach ($cart_items as $index => $cart_item)
                             <div class="row my-2 align-items-center">
                                 <div class="col-md-2">
-                                    <img style="width: 100%; object-fit:contain;" src="{{env('APP_URL').'/product/getThumbnail/'. $cart_item['product_id'] .'/'. $cart_item['image']}}" alt={{$cart_item['main_text']}}>
+                                    <img style="width: 100%; object-fit:contain;" src="{{env('APP_URL').'product/getThumbnail/'. $cart_item['product_id'] .'/'. $cart_item['image']}}" alt={{$cart_item['main_text']}}>
                                 </div>
                                 <div class="col-md-5 d-flex flex-md-column">
                                     <h6>{{$cart_item['main_text']}}</h6>
