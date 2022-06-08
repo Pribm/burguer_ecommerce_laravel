@@ -20,7 +20,7 @@ class ProductController extends Controller
             'main_text' => 'required|min:5|max:60',
             'secondary_text' => 'min:10|max:120',
             'price' => 'required',
-            'image' => ['required','file','max:2048','mimes:png', new TransparentImageBackground]
+            'image' => ['required','file','max:2048','mimes:png', new TransparentImageBackground()]
         ];
 
         $request->validate($rules);

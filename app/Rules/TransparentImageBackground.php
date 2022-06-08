@@ -12,7 +12,7 @@ class TransparentImageBackground implements Rule
      *
      * @return void
      */
-    public function __construct($attribute)
+    public function __construct($attribute = '')
     {
         $this->attribute = $attribute;
     }
