@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{$site_info->site_name}}</title>
+    <title>{{isset($site_info) ? $site_info->site_name : 'Burguer'}}</title>
     <link rel="icon" href={{route('get.image', ['path' => 'website', 'subpath' => 'images', 'image' => $site_info->favicon])}}>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
@@ -46,10 +46,10 @@
                 <div class="row m-4 m-md-0 h-100 align-items-center">
                     <div class="col-md-6" id='main_section_title'>
                         <h6>
-                            {{$main_product->secondary_text}}
+                            {{isset($main_product) ? $main_product->secondary_text : 'Burguer item'}}
                         </h6>
                         <h1>
-                            {{$main_product->main_text}}
+                            {{isset($main_product) ? $main_product->main_text : 'Burguer subtext'}}
                         </h1>
                     </div>
 
@@ -57,10 +57,10 @@
                         <div class="bg-danger position-absolute" id='price_tag'>
                             <h4>only</h4>
                             <h1>
-                                {{$main_product->price}}
+                                {{isset($main_product) ? $main_product->price : '$3,95'}}
                             </h1>
                         </div>
-                        <img class="w-100" src="{{env('APP_URL').'/product/getThumbnail/'. $main_product->id .'/'. $main_product->image}}" alt="a fancy hamburguer image">
+                        <img class="w-100" src="{{isset($main_product) ? env('APP_URL').'/product/getThumbnail/'. $main_product->id .'/'. $main_product->image : url('/img/BurgerImage.png')}}" alt="a fancy hamburguer image">
                     </div>
                 </div>
             </div>
