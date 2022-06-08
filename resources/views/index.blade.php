@@ -176,7 +176,13 @@
                         Mockup Address - 255 - 68142-123
                     @endif
                 </p>
-                <h6>{{$address->city}} {{$address->state}}, {{$address->country}}</h6>
+                <h6>
+                    @if (isset($address))
+                        {{$address->city}} {{$address->state}}, {{$address->country}}
+                    @else
+                        Mockup Address - 255 - 68142-123
+                    @endif
+                </h6>
             </div>
             <p class="footer__credits">{{$site_info ? $site_info->footer_message : null}}</p>
             <div class="footer__contacts">
