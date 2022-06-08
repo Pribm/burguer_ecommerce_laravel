@@ -104,7 +104,7 @@
                                                     {{$product->price}}
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <img class="w-100" src={{env('APP_URL').'/product/getThumbnail/'. $product->id .'/'. $product->image}} alt=""/>
+                                                    <img class="w-100" src={{env('APP_URL').'product/getThumbnail/'. $product->id .'/'. $product->image}} alt=""/>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <form method="POST" action={{route('product.update', ['id' => $product->id, 'status' => 'set_main' ])}}>
