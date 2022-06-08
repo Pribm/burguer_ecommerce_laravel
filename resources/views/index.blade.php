@@ -170,7 +170,11 @@
             <img src={{$site_info ? route('get.image', ['path' => 'website', 'subpath' => 'images', 'image' => $site_info->horizontal_logo]) : "../img/Logo.png"}} alt="footer_logo" height='100' class="footer__logo" style="filter: brightness(0) invert(1);">
             <div>
                 <p class="footer__text m-0">
-                    {{$address->sublocality}} - {{$address->house_number}}, {{$address->zipcode}}
+                    @if (isset($address))
+                        {{$address->sublocality}} - {{$address->house_number}}, {{$address->zipcode}}
+                    @else
+                        Mockup Address - 255 - 68142-123
+                    @endif
                 </p>
                 <h6>{{$address->city}} {{$address->state}}, {{$address->country}}</h6>
             </div>
