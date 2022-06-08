@@ -60,7 +60,7 @@
                                 {{isset($main_product) ? $main_product->price : '$3,95'}}
                             </h1>
                         </div>
-                        <img class="w-100" src="{{isset($main_product) ? env('APP_URL').'/product/getThumbnail/'. $main_product->id .'/'. $main_product->image : url('/img/BurgerImage.png')}}" alt="a fancy hamburguer image">
+                        <img class="w-100" src="{{isset($main_product) ? env('APP_URL').'product/getThumbnail/'. $main_product->id .'/'. $main_product->image : url('/img/BurgerImage.png')}}" alt="a fancy hamburguer image">
                     </div>
                 </div>
             </div>
